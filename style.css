@@ -1,0 +1,321 @@
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color:white;
+  text-align:center;
+
+  background: url("assets/Undertale.gif") center center fixed;
+  background-size: cover;
+
+  position: relative;
+  z-index: 0;
+}
+
+/* OVERLAY ESCURO CORRETO */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: -1;
+}
+
+/* GARANTE QUE TODO O CONTEÚDO FIQUE NA FRENTE */
+header, nav, section {
+  position: relative;
+  z-index: 1;
+}
+
+header { padding:60px 20px; }
+
+header h1 {
+  font-family:'Orbitron',sans-serif;
+  font-size:3rem;
+  color:#e0e243;
+}
+
+nav { padding:15px; background:rgba(255,255,255,0.05); }
+
+nav a {
+  margin:0 15px;
+  text-decoration:none;
+  color:white;
+}
+
+section { padding:60px 20px; }
+
+.cards {
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:20px;
+}
+
+.card {
+  background:rgba(255,255,255,0.08);
+  padding:20px;
+  border-radius:15px;
+  backdrop-filter:blur(10px);
+  transition:0.4s;
+}
+
+.image-card img {
+  width:100%;
+  border-radius:10px;
+  margin-bottom:10px;
+}
+
+/* GLOW DOS JOGOS */
+.lol:hover { box-shadow:0 0 25px #1e90ff; transform:scale(1.05); }
+.bg3:hover { box-shadow:0 0 25px #d4af37; transform:scale(1.05); }
+.l4d2:hover { box-shadow:0 0 25px #00ff66; transform:scale(1.05); }
+.ds2:hover { box-shadow:0 0 25px #ff1e1e; transform:scale(1.05); }
+.undertale:hover { box-shadow:0 0 25px #ffffff,0 0 50px #ff0000; transform:scale(1.05); }
+
+/* SERIES */
+.serie { margin:20px auto; max-width:500px; text-align:left; }
+
+.serie-bar {
+  width:100%;
+  height:12px;
+  background:rgba(255,255,255,0.1);
+  border-radius:20px;
+  overflow:hidden;
+}
+
+.serie-progress {
+  height:100%;
+  width:0;
+  transition:width 1.5s ease;
+}
+
+.arcane { background:linear-gradient(90deg,#1e90ff,#8a2be2); }
+.tlou { background:linear-gradient(90deg,#00ff66,#006400); }
+.st { background:linear-gradient(90deg,#ff0000,#8b0000); }
+
+/* ANIMAÇÃO */
+.fade-in { opacity:0; transform:translateY(20px); transition:1s; }
+.fade-in.visible { opacity:1; transform:translateY(0); }
+
+.music-card {
+  width: 300px;
+  padding: 10px;
+}
+
+.music-card iframe {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.series-container {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.serie-card {
+  width: 220px;
+  text-align: center;
+  transition: 0.4s;
+}
+
+.serie-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.serie-card:hover {
+  transform: scale(1.08);
+}
+
+.social-links {
+  margin-top: 20px;
+}
+
+.linkedin-btn,
+.github-btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+  color: white;
+}
+
+.linkedin-btn {
+  background: #0a66c2;
+}
+
+.linkedin-btn:hover {
+  background: #084c8d;
+  transform: scale(1.05);
+}
+
+.github-btn {
+  background: #333;
+}
+
+.github-btn:hover {
+  background: #000;
+  transform: scale(1.05);
+}
+
+/* === PROJETOS PREMIUM === */
+
+.destaque-projetos {
+  padding-top: 80px;
+}
+
+.projects-container {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+.project-card {
+  width: 380px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+  transition: 0.4s;
+  position: relative;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 0 40px rgba(138,43,226,0.6);
+}
+
+.project-content {
+  padding: 25px;
+}
+
+.project-card h3 {
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+}
+
+.tech-tags {
+  margin-bottom: 15px;
+}
+
+.tech-tags span {
+  display: inline-block;
+  background: rgba(138,43,226,0.2);
+  padding: 5px 10px;
+  margin: 4px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+}
+
+.project-card p {
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.project-card a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #8a2be2, #1e90ff);
+  transition: 0.3s;
+  display: inline-block;
+}
+
+.project-card a:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(138,43,226,0.7);
+}
+
+/* BADGE */
+
+.badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: gold;
+  color: black;
+  font-size: 0.7rem;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+/* CARD PRINCIPAL COM MAIS DESTAQUE */
+
+.principal {
+  border: 2px solid #ffd70080;
+  box-shadow: 0 0 25px rgba(255,215,0,0.4);
+}
+
+/* Seção Sobre Mim */
+#sobre {
+  max-width: 900px;       /* Limita a largura para facilitar a leitura */
+  margin: 0 auto;         /* Centraliza a seção na tela */
+  padding: 40px 20px;     /* Espaçamento interno */
+  line-height: 1.7;       /* Altura das linhas para leitura confortável */
+  font-family: 'Poppins', sans-serif;
+  color: #333;            /* Cor de texto agradável */
+  background-color: #ecd867c4; /* Fundo suave para destacar */
+  border-radius: 12px;    /* Bordas arredondadas */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* Sombra leve */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Pequena animação ao passar o mouse */
+#sobre:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+/* Título da seção */
+#sobre h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: #1a1a1a;
+  text-align: center;
+}
+
+/* Parágrafos */
+#sobre p {
+  margin-bottom: 18px; /* Espaço entre parágrafos */
+  font-size: 1.1rem;
+  text-align: justify; /* Deixa o texto mais “encaixado” */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  #sobre {
+    padding: 30px 15px;
+  }
+  
+  #sobre h2 {
+    font-size: 1.8rem;
+  }
+
+  #sobre p {
+    font-size: 1rem;
+  }
+}
