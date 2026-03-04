@@ -1,18 +1,21 @@
-* { margin:0; padding:0; box-sizing:border-box; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== BODY ===== */
 
 body {
   font-family: 'Poppins', sans-serif;
-  color:white;
-  text-align:center;
-
+  color: white;
+  text-align: center;
   background: url("assets/undertale.gif") center center fixed;
   background-size: cover;
-
   position: relative;
-  z-index: 0;
 }
 
-/* OVERLAY ESCURO CORRETO */
+/* Overlay escuro */
 body::before {
   content: "";
   position: fixed;
@@ -21,82 +24,92 @@ body::before {
   z-index: -1;
 }
 
-/* GARANTE QUE TODO O CONTEÚDO FIQUE NA FRENTE */
-header, nav, section {
+header, nav, section, footer {
   position: relative;
   z-index: 1;
 }
 
-header { padding:60px 20px; }
+section {
+  padding: 70px 20px;
+}
+
+/* ===== HEADER ===== */
+
+header {
+  padding: 70px 20px;
+}
 
 header h1 {
-  font-family:'Orbitron',sans-serif;
-  font-size:3rem;
-  color:#e0e243;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3rem;
+  color: #e0e243;
 }
 
-nav { padding:15px; background:rgba(255,255,255,0.05); }
+/* ===== NAV ===== */
+
+nav {
+  padding: 15px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(5px);
+}
 
 nav a {
-  margin:0 15px;
-  text-decoration:none;
-  color:white;
+  margin: 0 15px;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
 }
 
-section { padding:60px 20px; }
+nav a:hover {
+  color: #e0e243;
+}
+
+/* ===== CARDS GERAIS ===== */
 
 .cards {
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 30px;
 }
 
 .card {
-  background:rgba(255,255,255,0.08);
-  padding:20px;
-  border-radius:15px;
-  backdrop-filter:blur(10px);
-  transition:0.4s;
+  background: rgba(255,255,255,0.08);
+  padding: 20px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  transition: 0.4s;
 }
 
-.image-card img {
-  width:100%;
-  border-radius:10px;
-  margin-bottom:10px;
+/* ===== JOGOS ===== */
+
+.hobby-card {
+  width: 220px;
+  text-align: center;
+  transition: 0.4s;
 }
 
-/* GLOW DOS JOGOS */
-.lol:hover { box-shadow:0 0 25px #1e90ff; transform:scale(1.05); }
-.bg3:hover { box-shadow:0 0 25px #d4af37; transform:scale(1.05); }
-.l4d2:hover { box-shadow:0 0 25px #00ff66; transform:scale(1.05); }
-.ds2:hover { box-shadow:0 0 25px #ff1e1e; transform:scale(1.05); }
-.undertale:hover { box-shadow:0 0 25px #ffffff,0 0 50px #ff0000; transform:scale(1.05); }
-
-/* SERIES */
-.serie { margin:20px auto; max-width:500px; text-align:left; }
-
-.serie-bar {
-  width:100%;
-  height:12px;
-  background:rgba(255,255,255,0.1);
-  border-radius:20px;
-  overflow:hidden;
+.hobby-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 10px;
 }
 
-.serie-progress {
-  height:100%;
-  width:0;
-  transition:width 1.5s ease;
+.hobby-card:hover {
+  transform: scale(1.08);
 }
 
-.arcane { background:linear-gradient(90deg,#1e90ff,#8a2be2); }
-.tlou { background:linear-gradient(90deg,#00ff66,#006400); }
-.st { background:linear-gradient(90deg,#ff0000,#8b0000); }
+/* Glow personalizado */
+.RE4:hover { box-shadow: 0 0 25px #1e90ff; }
+.l4d2:hover { box-shadow: 0 0 25px #00ff66; }
+.ds2:hover { box-shadow: 0 0 25px #ff1e1e; }
+.undertale:hover { box-shadow: 0 0 25px #ffffff, 0 0 50px #ff0000; }
 
-/* ANIMAÇÃO */
-.fade-in { opacity:0; transform:translateY(20px); transition:1s; }
-.fade-in.visible { opacity:1; transform:translateY(0); }
+/* ===== MÚSICAS ===== */
 
 .music-card {
   width: 300px;
@@ -108,12 +121,14 @@ section { padding:60px 20px; }
   border-radius: 12px;
 }
 
+/* ===== SÉRIES ===== */
+
 .series-container {
   display: flex;
   justify-content: center;
-  gap: 25px;
+  gap: 30px;
   flex-wrap: wrap;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .serie-card {
@@ -133,41 +148,7 @@ section { padding:60px 20px; }
   transform: scale(1.08);
 }
 
-.social-links {
-  margin-top: 20px;
-}
-
-.linkedin-btn,
-.github-btn {
-  display: inline-block;
-  margin: 10px;
-  padding: 12px 25px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-  color: white;
-}
-
-.linkedin-btn {
-  background: #0a66c2;
-}
-
-.linkedin-btn:hover {
-  background: #084c8d;
-  transform: scale(1.05);
-}
-
-.github-btn {
-  background: #333;
-}
-
-.github-btn:hover {
-  background: #000;
-  transform: scale(1.05);
-}
-
-/* === PROJETOS PREMIUM === */
+/* ===== PROJETOS ===== */
 
 .destaque-projetos {
   padding-top: 80px;
@@ -194,7 +175,7 @@ section { padding:60px 20px; }
 
 .project-card img {
   width: 100%;
-  height: 200px;
+  height: 220px;
   object-fit: cover;
 }
 
@@ -247,8 +228,7 @@ section { padding:60px 20px; }
   box-shadow: 0 0 20px rgba(138,43,226,0.7);
 }
 
-/* BADGE */
-
+/* Badge */
 .badge {
   position: absolute;
   top: 15px;
@@ -261,61 +241,133 @@ section { padding:60px 20px; }
   font-weight: bold;
 }
 
-/* CARD PRINCIPAL COM MAIS DESTAQUE */
-
+/* Projeto principal */
 .principal {
   border: 2px solid #ffd70080;
   box-shadow: 0 0 25px rgba(255,215,0,0.4);
 }
 
-/* Seção Sobre Mim */
+/* ===== SOBRE ===== */
+
 #sobre {
-  max-width: 900px;       /* Limita a largura para facilitar a leitura */
-  margin: 0 auto;         /* Centraliza a seção na tela */
-  padding: 40px 20px;     /* Espaçamento interno */
-  line-height: 1.7;       /* Altura das linhas para leitura confortável */
-  font-family: 'Poppins', sans-serif;
-  color: #333;            /* Cor de texto agradável */
-  background-color: #ecd867c4; /* Fundo suave para destacar */
-  border-radius: 12px;    /* Bordas arredondadas */
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* Sombra leve */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 25px;
+  line-height: 1.7;
+  color: #333;
+  background-color: #ecd867c4;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: 0.3s;
 }
 
-/* Pequena animação ao passar o mouse */
 #sobre:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 25px rgba(0,0,0,0.12);
 }
 
-/* Título da seção */
 #sobre h2 {
   font-family: 'Orbitron', sans-serif;
-  font-weight: 600;
   font-size: 2.2rem;
   margin-bottom: 20px;
   color: #1a1a1a;
-  text-align: center;
 }
 
-/* Parágrafos */
 #sobre p {
-  margin-bottom: 18px; /* Espaço entre parágrafos */
+  margin-bottom: 18px;
   font-size: 1.1rem;
-  text-align: justify; /* Deixa o texto mais “encaixado” */
+  text-align: justify;
 }
 
-/* Responsividade para telas menores */
+/* ===== CONTATO ===== */
+
+.social-links {
+  margin-top: 20px;
+}
+
+.linkedin-btn,
+.github-btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+  color: white;
+}
+
+.linkedin-btn {
+  background: #0a66c2;
+}
+
+.linkedin-btn:hover {
+  background: #084c8d;
+  transform: scale(1.05);
+}
+
+.github-btn {
+  background: #333;
+}
+
+.github-btn:hover {
+  background: #000;
+  transform: scale(1.05);
+}
+
+/* ===== ANIMAÇÃO ===== */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 1s;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== RESPONSIVIDADE ===== */
+
 @media (max-width: 768px) {
+  header h1 {
+    font-size: 2.2rem;
+  }
+
+  .project-card {
+    width: 95%;
+  }
+
+  .hobby-card,
+  .serie-card {
+    width: 90%;
+  }
+
   #sobre {
     padding: 30px 15px;
-  }
-  
-  #sobre h2 {
-    font-size: 1.8rem;
   }
 
   #sobre p {
     font-size: 1rem;
   }
 }
+
+/* ===== TIPOGRAFIA PREMIUM ===== */
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  opacity: 0.9;
+}
+
+section {
+  padding: 100px 20px;
+}
+
