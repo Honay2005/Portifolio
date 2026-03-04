@@ -19,7 +19,7 @@ Este é o meu portfólio pessoal, onde apresento minha trajetória como desenvol
 ## 🔗 Meus Links
 - [LinkedIn](https://www.linkedin.com/in/nayara-lorena-ramos-santos-73b904274/)
 - [GitHub](https://github.com/Honay2005)
-- [Live Demo](#) *(adicione o link se estiver hospedado)*
+
 
 ## 🎯 Meu Objetivo
 Com este portfólio, quero mostrar minhas habilidades em desenvolvimento web, minha criatividade no design de interfaces e minha capacidade de construir projetos completos. Estou em busca da minha primeira oportunidade profissional para colocar meus conhecimentos em prática e continuar crescendo na área de tecnologia.
